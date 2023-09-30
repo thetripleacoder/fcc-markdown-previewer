@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Markdown Previewer</title>
+  </head>
+  <body>
+    <div class="column-container">
+      <h2 class="heading">Editor</h2>
+      <textarea id="editor"></textarea>
+    </div>
+    <div class="column-container">
+      <h2 class="heading">Previewer</h2>
+      <div id="preview"></div>
+    </div>
+
+    <!-- <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.0.3/marked.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script>
+      let preview = document.getElementById('preview');
+      let editor = document.getElementById('editor');
+
+      function renderMarkdownPreview(value) {
+        console.log(value);
+        preview.innerHTML = marked.parse(value.trim(), {
+          breaks: true,
+          gfm: true,
+        });
+      }
+
+      editor.addEventListener('keyup', function () {
+        renderMarkdownPreview(editor.value);
+      });
+
+      function init() {
+        let initMarkdown = `
+# Header
+
+## Sub Header
+
+[freeCodeCamp](https://www.freecodecamp.org/) 
+
+1. First item
+2. Second item
+3. Third item 
+
+![Sass logo](https://logonoid.com/images/sass-logo.png)
+
+\`code\`
+
+\`\`\`
+code block
+<em>sdsfsd</em>
+\`\`\`
+
+>> This is blockquote.
+
+**bold text**
+
+        `;
+
+        editor.value = initMarkdown;
+
+        renderMarkdownPreview(initMarkdown);
+      }
+      init();
+    </script>
+  </body>
+</html>

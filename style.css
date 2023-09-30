@@ -1,0 +1,44 @@
+#preview {
+  border-radius: 20px;
+  overflow-y: auto;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  width: calc(100% - 40px);
+  height: calc(100vh - 140px);
+  padding: 20px;
+  background-color: white;
+}
+
+#editor {
+  background-color: rgb(0, 58, 58);
+  resize: none;
+  overflow-y: auto;
+  color: white;
+  width: 100%;
+  height: calc(100vh - 100px);
+  font-family: monospace;
+}
+
+body {
+  background-color: rgb(161, 255, 255);
+  margin: 0;
+  padding: 0 20px 20px 20px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 20px;
+  height: calc(100vh - 500px);
+}
+body img {
+  width: 100%;
+}
+
+.column-container {
+  height: calc(100% - 400px);
+}
+.column-container .heading {
+  text-align: center;
+  margin-bottom: 10px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+}/*# sourceMappingURL=style.css.map */
